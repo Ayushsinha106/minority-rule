@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minority Rule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chatBox">
+        <div class="chatHeader">
+            <h2>chat</h2>
+            <span class="chatCancel" onclick="chatBoxNone()">&#10006</span>
+        </div>
+        <div class="chatBody">
+            <!-- <div class="chatDialogue">
+                <img src="img/Akiyama_intro.png" alt="" class="chatImg">
+                <span class="playerDialogue"> i am going with yes </span>
+            </div> -->
+        </div>
+    </div>
+    <div class="form">
+        <div class="imageDiv">
+            Choose Image
+            <input type="file" name="image" id="imageInput">
+        </div>
+        <div class="nameDiv">
+            <input type="text" id="textInput" placeholder="Enter Name">
+        </div>
+        <div class="submitDiv">
+            <button onclick="storeData()" id="submitButton">Submit</button>
+        </div>
+    </div>
+    <div class="winnerDiv">
+        <div class="playerContainer" id="playCon">
+            <h1>Winner</h1>
+            <div class="playerDiv" id="winnerPlayerDiv">
+                <img src="" alt="" id='winnerPic'>
+            </div>
+            <span class="playerName" id="winnerPlayerName">
+            </span>
+            <div class="playerDiv" id="winnerPlayerDiv1">
+                <img src="" alt="" id='winnerPic1'>
+            </div>
+            <span class="playerName" id="winnerPlayerName1">
+            </span>
+            <button class="playAgain" onclick="playAgainFunc()">Play Again</button>
+
+            <canvas id="drawing_canvas"></canvas>
+
+        </div>
+    </div>
+    <div class="startDiv">
+        <h1>Minority Rule</h1>
+        <button id="startGame">start</button>
+    </div>
+    <div class="questionDiv">
+        <div class="showChat" onclick="chatBoxFlex()">&#10009</div>
+        <span id="question">i am a man</span>
+    </div>
+    <div class="timer">
+        <span id="timer">60</span>
+    </div>
+    <div class="scoreBoard">
+        <span class="yesPeople">
+            YES: <SPAN class="yesScore"> </SPAN>
+        </span>
+        <span class="noPeople">
+            NO: <SPAN class="noScore"></SPAN>
+        </span>
+    </div>
+    <div class="nextGameDiv">
+        <button id="nextGame" onclick="nextGameFunc()">Next Round</button>
+    </div>
+    <div class="players">
+        <div class="playerContainer" id="playerContainer0">
+            <div class="playerDiv" id="player0">
+                <img src="" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player0Name">You</span>
+        </div>
+        <div class="playerContainer" id="playerContainer1">
+            <div class="playerDiv" id="player1">
+                <img src="./img/conan gun 2.jpeg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player1Name">Edogawa conan</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player2">
+                <img src="https://media.tumblr.com/tumblr_m8nvn5ETHG1r7it1x.png" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player2Name">houtaru oreki</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player3">
+                <img src="https://www.spieltimes.com/wp-content/uploads/2023/04/Lelouch.webp" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player3Name">zero</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player4">
+                <img src="./img/Akiyama_intro.png" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player4Name">akiyama shinichi</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player5">
+                <img src="./img/l death note.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player5Name">l</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player6">
+                <img src="./img/aizen.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player6Name">Sosuke Aizen</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player7">
+                <img src="https://comicvine.gamespot.com/a/uploads/scale_medium/13/136525/6097212-yokoya.png" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player7Name">Yokoya norihiko</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player8">
+                <img src="https://qph.cf2.quoracdn.net/main-qimg-c675ce6b9a23afbefac48e1d4b412cdf-lq" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player8Name">Ayanokoji Kiyotaka</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player9">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Light_from_Death_Note.jpg/220px-Light_from_Death_Note.jpg"
+                    alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player9Name">light yagami</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player10">
+                <img src="https://comicvine.gamespot.com/a/uploads/original/11117/111178336/6005711-8660243449-monst.png"
+                    alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player10Name">johan liebert</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player11">
+                <img src="https://i.pinimg.com/originals/fc/bd/75/fcbd75425257369dcd0a84acd3570efc.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player11Name">katagiri yuuichi</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player12">
+                <img src="https://pm1.narvii.com/6650/a01619e127c10d2ac75a251a7d9aa2a2b41433d2_hq.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player12Name">tokuchi toua</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player13">
+                <img src="./img/Nine.webp" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player13Name">Nine</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player14">
+                <img src="https://pm1.aminoapps.com/6720/e741ac303c7de29d47d615d0ec2a16d0de9ebc95_hq.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player14Name">makishima shogo</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player15">
+                <img src="https://static.wikia.nocookie.net/moriarty-the-patriot/images/e/ef/Sherlock_manga_cap.jpg"
+                    alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player15Name">sherlock holmes</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player16">
+                <img src="https://i.pinimg.com/1200x/d1/3c/e2/d13ce26c125620df594812477b2fb40c.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player16Name">william james moriaty</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player17">
+                <img src="https://pm1.narvii.com/7158/20d5a514e1d1b1eb6bdb111573e335160be998e0r1-500-665v2_00.jpg"
+                    alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player17Name">kudo shinichi</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player18">
+                <img src="https://i.pinimg.com/736x/90/e1/93/90e1932df169677c49fe97adeed631af.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player18Name">kaito kid</span>
+        </div>
+        <div class="playerContainer">
+            <div class="playerDiv" id="player19">
+                <img src="https://i.pinimg.com/originals/bc/1b/bf/bc1bbf7ae6793d7202b8bd3d05e364c9.jpg" alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player19Name">hattori heiji</span>
+        </div>
+        <div class="playerContainer" id="player20Div">
+            <div class="playerDiv" id="player20">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWkj2FCz8mV2b89cK8SYSCuzXvZERLlZPtS1YvPlQp9GyTPI8ulGmaHOvsFEi1aglMFNk&usqp=CAU"
+                    alt="">
+                <div class="lose"></div>
+            </div>
+            <span class="playerName" id="player20Name">senku ishigami</span>
+        </div>
+    </div>
+    <div class="selectionDiv">
+        <h3>Select Your Answer</h3>
+        <div class="mainAnswer">
+            <button class="yesOption" id="YesButton" onclick="handleYesClick()">
+                o YES
+            </button>
+            <button class="noOption" id="NoButton" onclick="handleNoClick()">
+                o NO
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="Animation.js"></script>
+
+</body>
+
+</html>

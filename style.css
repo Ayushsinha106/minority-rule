@@ -1,0 +1,455 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    text-transform: uppercase;
+}
+
+body{
+    min-height: 100vh;
+    /* width: 100vw; */
+    background-color: rgb(34, 40, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.players{
+    min-height: 450px;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.playerDiv {
+    height: 160px;
+    width: 160px;
+    background-color: antiquewhite;
+    border: 2px 2px 0 2px solid black;
+    margin: 20px 20px 0 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    position: relative;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.playerName{
+    display: inline-block;
+    width: 160px;
+    min-height: 20px;
+    background-color: aliceblue;
+    margin: 0 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.selectionDiv {
+    height: 100vh;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+h3{
+    margin: 20px;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mainAnswer {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+
+}
+.yesOption, .noOption {
+    height: 60%;
+    width: 300px;
+    background-color: aliceblue;
+    border: 2px solid black;
+    margin: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.optionTitle{
+    font-size: 2em;
+    user-select: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin: 20px;
+    transition: background-color 200ms;
+  }
+  
+  /* file upload button hover state */
+  input[type="file"]::file-selector-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* file upload button active state */
+  input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+  }
+  input[type='text']{
+    height: 30px;
+    text-align: center;
+    width: 250px;
+    margin: 10px;
+  }
+
+  #submitButton {
+    height: 30px;
+    width: 100px;
+    background-color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 12px;
+    cursor: pointer;
+  }
+  
+  /* QUESTION DIV*/
+  .questionDiv {
+    width: 100%;
+    height: 80px;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .questionDiv span {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(60, 51, 39);
+    background-color: rgb(38, 193, 121);
+    display: inline-block;
+    min-width: 400px;
+    text-align: center;
+    min-height: 30px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .scoreBoard {
+    width: 100%;
+    height: 100px;
+    border: 3px solid white;
+    color: #e5e7eb;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .yesPeople, .noPeople {
+    font-size: 1.4em;
+
+  }
+
+  .startDiv {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(34, 40, 45);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #startGame, .playAgain {
+    height: 50px;
+    width: 140px;
+    border-radius: 11px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 900px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+  .playAgain{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+  }
+  .timer {
+    width: 90px;
+    height: 90px;
+    background-color: #e5e7eb;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .nextGameDiv {
+    height: 100px;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  #nextGame, .nextGame1, .nextGame2, .nextGame3 {
+    height: 50px;
+    width: 160px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .lose {
+    height: 160px;
+    width: 160px;
+    background-color: rgba(255, 0, 0, 0.392);
+    top: 0;
+    position: absolute;
+    display: none;
+    transition: all 1s ease-in;
+  }
+
+  h1{
+    margin-bottom: 30px;
+    color: #e5e7eb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .winnerDiv{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .winnerDiv .playerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+  }
+  #playCon {
+    height: 100%;
+    width: 100%;
+  }
+  #winnerPlayerDiv, #winnerPlayerDiv1{
+    margin: 0;
+    height: 250px;
+    width: 250px;
+  }
+  #winnerPlayerDiv1{
+    margin-top: 20px;
+  }
+  .winnerDiv span {
+    width: 250px;
+    margin: 0;
+  }
+  .nextGame1 {
+    background-color: aqua;
+  }
+
+  #drawing_canvas {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    top: 51px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    pointer-events: none;
+  }
+  
+  #canvas {
+    position: absolute;
+    background: linear-gradient(#9ff781, #f3f781);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+   }
+  .copy {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    font-family: 'Futura', 'Helvetica Neue', Helvetica;
+    color: #333;
+ }
+  #player0 {
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+  }
+  .chatBox {
+    min-height: 95vh;
+    width: 95%;
+    background-color: #f3f781;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 30px;
+  }
+  .chatBox img {
+    height: 60px;
+    width: 60Px;
+    border-radius: 50%;
+  }
+  .chatHeader {
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid black;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+  }
+  .chatHeader h2 {
+    margin-left: 160px;
+  }
+  .chatHeader .chatCancel {
+      font-weight: 800;
+      margin-right: 30px;
+      font-size: 2em;
+      cursor: pointer;
+  }
+  .chatBody{
+    height: 90%;
+    width: 100%;
+    padding: 20px;
+    margin-top: 15%;
+  }
+  .chatDialogue {
+    height: 60px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .chatDialogue span {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .showChat{
+    height: 60px;
+    width: 60px;
+    background-color: #9ff781;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  .imageDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #e5e7eb;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 800;
+  }
+
+  .Room {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -300px;
+  }
+  .roomInput {
+    display: flex;
+    margin: 20px;
+  }
+  .roomInput input {
+    height: 30px;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .roomInput button {
+    height: 30px;
+    width: 60px;
+    background-color: #9ff781;
+    margin: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .createRoom {
+    margin: 20px;
+  }
+  .createRoom button {
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+  }
+  button {
+    cursor: pointer;
+  }
