@@ -295,7 +295,7 @@ let winningPlayerCount = 0
 
 
 let value = [];
-let time = 60;
+let time = 20;
 
 startGame.onclick = () => {
     startDiv.style.display = 'none';
@@ -471,7 +471,7 @@ function gameStart(q, all) {
     })
 
     let countdown;
-    time = 60;
+    time = 20;
     if (!countdown) {
         countdown = setInterval(updateTimer, 1000)
     }
@@ -763,7 +763,7 @@ function gameStart(q, all) {
                         })
                         winningPlayerCount = winningPlayers.length
                     }
-                    time = 60
+                    time = 20
                     noScore.textContent = all.length
                     return
                 }
@@ -783,7 +783,7 @@ function gameStart(q, all) {
                     })
                     winningPlayerCount = winningPlayers.length
                 }
-                time = 60
+                time = 20
                 alert('There are same no. of YES & No, Play Again')
                 return
 
@@ -866,7 +866,7 @@ function gameStart(q, all) {
                     const winNameVar1 = window[winName1]
                     winnerPlayerName1.textContent = winNameVar1.innerHTML
                 }
-                time = 60
+                time = 20
             }
             else if (countNo > countYes) {
                 noPlayerDiv.forEach(function (e) {
@@ -930,7 +930,7 @@ function gameStart(q, all) {
                     winnerPlayerName1.textContent = winNameVar1.innerHTML
 
                 }
-                time = 60
+                time = 20
             }
 
         }
