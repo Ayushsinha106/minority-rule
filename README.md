@@ -21,4 +21,4 @@
 
 ![start](https://raw.githubusercontent.com/Ayushsinha106/minority-rule/main/img/04.png)
 
-**And The game continues until there are one or two players left**
+**And The game continues until there are one or two players left** (there's a way where you can cheat and win the game, let's see if you can find it)
